@@ -31,7 +31,7 @@ public class Primos {
      * Metodo el cual rellena el vector principal con numeros primos encontrados
      * @return Devuelve un array con los numeros primos encontrados
      */
-    private static int[] arrayDePrimos() {
+    public static int[] arrayDePrimos() {
         int[] primos = new int[numeroDePrimos()];
         for (i = 0, j = 0; i < dim; i++) {
             if (esPrimo[i]) {
@@ -45,7 +45,7 @@ public class Primos {
      * Metodo que cuenta cuantos numeros primos van ha haber para determinar la longitud del array del vector
      * @return devuelve el numero de longitud que tendra el array del vector el cual se rellenara de numeros primos
      */
-    private static int numeroDePrimos() {
+    public static int numeroDePrimos() {
         // ¿Cuántos primos hay?
         int cuenta = 0;
         for (i = 0; i < dim; i++) {
@@ -59,7 +59,7 @@ public class Primos {
     /**
      * Metodo que criba para eliminar ciertos numeros los cuales no son primos
      */
-    private static void criba() {
+    public static void criba() {
         // Criba
         for (i = 2; i < Math.sqrt(dim) + 1; i++) {
             if (esPrimo[i]) {
