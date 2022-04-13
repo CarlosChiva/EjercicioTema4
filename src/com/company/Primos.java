@@ -8,30 +8,28 @@ public class Primos {
     static int dim;
     // Tamaño del array
     static boolean[] esPrimo;
-
-    //public boolean eSPrimo(boolean[] booleans){
-
-    //}
     public static int[] generarPrimos(int max) {
          dim = max + 1;
         esPrimo = new boolean[dim];
-
         if (max >= 2) {
             inicializedArray();
             criba();
-
-            // Rellenar el vector de números primos
-            int[] primos = new int[numeroDePrimos()];
-            for (i = 0, j = 0; i < dim; i++) {
-                if (esPrimo[i]) {
-                    primos[j++] = i;
-                }
-            }
-            return primos;
+            return arrayDePrimos();
         } else { // max < 2
             return new int[0];
             // Vector vacío
         }
+    }
+
+    private static int[] arrayDePrimos() {
+        // Rellenar el vector de números primos
+        int[] primos = new int[numeroDePrimos()];
+        for (i = 0, j = 0; i < dim; i++) {
+            if (esPrimo[i]) {
+                primos[j++] = i;
+            }
+        }
+        return primos;
     }
 
     private static int numeroDePrimos() {
@@ -44,7 +42,6 @@ public class Primos {
         }
         return cuenta;
     }
-
     private static void criba() {
         // Criba
         for (i = 2; i < Math.sqrt(dim) + 1; i++) {
@@ -56,8 +53,7 @@ public class Primos {
             }
         }
     }
-
-    private static void inicializedArray() {
+    public static void inicializedArray() {
         // Inicializar el array
         for (i = 0; i < dim; i++) {
             esPrimo[i] = true;
